@@ -10,7 +10,7 @@ class OurDataset(Dataset):
         self.image_path_to_class_dict = image_path_to_class_dict
         self.class_to_number_dict = class_to_number_dict
         self.image_paths = list(self.image_path_to_class_dict.keys())
-        self.resize = transforms.Resize((256, 256))  # Resize to 256x256 for ViT input
+        self.resize = transforms.Resize((224, 224))  # Resize to 256x256 for ViT input
         self.to_tensor = transforms.ToTensor()  # Converts images to tensor
         self.normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
                                               std=[0.229, 0.224, 0.225])  # Standard normalization for ViT
